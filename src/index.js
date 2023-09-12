@@ -1,6 +1,11 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app'
-import { getAnalytics } from 'firebase/analytics'
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
+import { getFirestore, collection, getDocs, getDoc } from 'firebase/firestore'
+
+import { createRoot } from 'react-dom/client'
+import App from '../client/components/App'
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -18,11 +23,27 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
-const analytics = getAnalytics(app)
+//db.collection('events').getDocs()
+const auth = getAuth(app)
+//const db = getFirestore(app)
+//const eventCol = collection(db, 'event')
+//const snapshot = await getDocs(eventCol)
 
-async function getCities(db) {
-  // const citiesCol = collection(db, 'cities');
-  // const citySnapshot = await getDocs(citiesCol);
-  // const cityList = citySnapshot.docs.map(doc => doc.data());
-  // return cityList;
-}
+onAuthStateChanged(auth, (user) => {
+  if (user != null) {
+    console.log('logged in')
+  } else {
+    console.log('no user')
+  }
+})
+
+//async function getCities(db) {
+// const citiesCol = collection(db, 'cities');
+// const citySnapshot = await getDocs(citiesCol);
+// const cityList = citySnapshot.docs.map(doc => doc.data());
+// return cityList;
+//}
+
+document.addEventListener('DOMContentLoaded', () => {
+  createRoot(document.getElementById('app')).render(<App />)
+})
