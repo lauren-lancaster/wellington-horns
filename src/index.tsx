@@ -45,5 +45,5 @@ onAuthStateChanged(auth, (user) => {
 //}
 
 document.addEventListener('DOMContentLoaded', () => {
-  createRoot(document.getElementById('app')).render(<App />)
+  createRoot(document.getElementById('app') as HTMLElement).render(<App />)
 })
