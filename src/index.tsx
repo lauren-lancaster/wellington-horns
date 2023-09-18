@@ -4,7 +4,10 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { getFirestore, collection, getDocs, getDoc } from 'firebase/firestore'
 
 import { createRoot } from 'react-dom/client'
-import App from '../client/components/App'
+import { Provider } from 'react-redux'
+import store from '../client/store'
+import { RouterProvider } from 'react-router-dom'
+import router from '../client/router'
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -45,5 +48,9 @@ onAuthStateChanged(auth, (user) => {
 //}
 
 document.addEventListener('DOMContentLoaded', () => {
-  createRoot(document.getElementById('app') as HTMLElement).render(<App />)
+  createRoot(document.getElementById('app') as HTMLElement).render(
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+  )
 })
