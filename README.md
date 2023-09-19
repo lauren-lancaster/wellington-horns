@@ -1,4 +1,4 @@
-#**Wellington Horns**
+# **Wellington Horns**
 
 This is a website for the horn players of Wellington to organise events on. 
 
