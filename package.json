@@ -27,11 +27,16 @@
     ]
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.1.1",
+    "@chakra-ui/react": "^2.8.1",
     "@devacademy/eslint-config": "^1.8.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@redux-devtools/extension": "^3.2.3",
     "cors": "^2.8.5",
     "express": "^4.17.2",
     "firebase": "^10.3.1",
+    "framer-motion": "^10.16.4",
     "react-redux": "^8.1.2",
     "react-router-dom": "^6.16.0",
     "redux": "^4.2.1",
