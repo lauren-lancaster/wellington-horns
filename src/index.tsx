@@ -9,6 +9,16 @@ import store from '../client/store'
 import { RouterProvider } from 'react-router-dom'
 import router from '../client/router'
 
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+
+const colors = {
+  brand: {
+    900: '#1a365d',
+    800: '#153e75',
+    700: '#2a69ac',
+  },
+}
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -32,6 +42,8 @@ const auth = getAuth(app)
 //const eventCol = collection(db, 'event')
 //const snapshot = await getDocs(eventCol)
 
+const theme = extendTheme({ colors })
+
 onAuthStateChanged(auth, (user) => {
   if (user != null) {
     console.log('logged in')
@@ -49,8 +61,10 @@ onAuthStateChanged(auth, (user) => {
 
 document.addEventListener('DOMContentLoaded', () => {
   createRoot(document.getElementById('app') as HTMLElement).render(
-    <Provider store={store}>
-      <RouterProvider router={router} />
-    </Provider>
+    <ChakraProvider theme={theme}>
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
+    </ChakraProvider>
   )
 })
