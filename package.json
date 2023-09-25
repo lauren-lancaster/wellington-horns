@@ -33,6 +33,7 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@redux-devtools/extension": "^3.2.3",
+    "@types/react-scroll": "^1.8.7",
     "cors": "^2.8.5",
     "express": "^4.17.2",
     "firebase": "^10.3.1",

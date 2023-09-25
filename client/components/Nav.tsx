@@ -12,8 +12,14 @@ function Nav() {
           <button className="nav-btn">Profile</button>
         </Link>
         <LinkScroll to="/events">
-          <button className="nav-btn">Profile</button>
+          <button className="nav-btn">What's on</button>
         </LinkScroll>
+        <Link to="/resources">
+          <button className="nav-btn">Resources</button>
+        </Link>
+        <Link to="/contact">
+          <button className="nav-btn">Contact</button>
+        </Link>
       </div>
     </>
   )
