@@ -1,4 +1,5 @@
 import Nav from './Nav'
+import Events from './Events'
 import { useEffect } from 'react'
 
 function Home() {
@@ -10,14 +11,19 @@ function Home() {
       <div className="navbar">
         <Nav />
       </div>
-      <div className="homepage-content">
-        <h1>Kia Ora!</h1>
-        <p>
-          Welcome to the online hub for Wellington horn players. Here you’ll
-          find info about community events, classes, exercises, well-being, and
-          what everyone’s got going on in their kitchens.{' '}
-        </p>
-        <p>Have a horn and want to join us? Sign up here or get in touch </p>
+      <div className="page-body">
+        <div className="homepage-content">
+          <h1>Kia Ora!</h1>
+          <p>
+            Welcome to the online hub for Wellington horn players. Here you’ll
+            find info about community events, classes, exercises, well-being,
+            and what everyone’s got going on in their kitchens.{' '}
+          </p>
+          <p>Have a horn and want to join us? Sign up here or get in touch </p>
+        </div>
+        <div className="events-page">
+          <Events />
+        </div>
       </div>
     </>
   )
