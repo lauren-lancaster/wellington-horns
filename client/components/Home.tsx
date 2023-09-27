@@ -1,6 +1,7 @@
 import Nav from './Nav'
 import Events from './Events'
 import { useEffect } from 'react'
+import { Container } from '@chakra-ui/react'
 
 function Home() {
   useEffect(() => {
@@ -8,10 +9,8 @@ function Home() {
   }, [])
   return (
     <>
-      <div className="navbar">
-        <Nav />
-      </div>
-      <div className="page-body">
+      <Nav />
+      <Container>
         <div className="homepage-content">
           <h1>Kia Ora!</h1>
           <p>
@@ -24,7 +23,7 @@ function Home() {
         <div className="events-page">
           <Events />
         </div>
-      </div>
+      </Container>
     </>
   )
 }
